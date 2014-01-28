@@ -1,0 +1,17 @@
+#-*- coding:utf-8 -*-
+SQL_UP = u"""
+CREATE TABLE tasks (
+    trainee_uid VARCHAR(255) NOT NULL,
+    trainee_email VARCHAR(255) NOT NULL,
+    task VARCHAR(255) NOT NULL,
+    start INT(11) DEFAULT NULL,
+    end INT(11) DEFAULT NULL,
+    accumulated INT(11) DEFAULT NULL,
+    PRIMARY KEY (trainee_uid, trainee_email, task),
+    CONSTRAINT fk_tasks_trainee FOREIGN KEY (trainee_uid, trainee_email) REFERENCES trainees (uid, email)
+) ENGINE=InnoDB CHARACTER SET=utf8;
+"""
+
+SQL_DOWN = u"""
+DROP TABLE tasks;
+"""

@@ -1,0 +1,20 @@
+[database]
+host: localhost
+port: 3306
+username: root
+password: 
+database: training
+
+[server]
+port: 8888
+certfile: /home/tch/Devel/training-server/etc/training.crt
+keyfile: /home/tch/Devel/training-server/etc/training.key
+api_key: training
+instances: 2
+no_keep_alive: False
+
+[smtp]
+host: smtp.gmail.com
+port: 587
+username: noreply@gmail.com
+password: somepassword

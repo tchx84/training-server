@@ -1,0 +1,15 @@
+#-*- coding:utf-8 -*-
+SQL_UP = u"""
+CREATE TABLE trainees (
+    uid VARCHAR(255) NOT NULL,
+    email VARCHAR(255) DEFAULT NULL,
+    name VARCHAR(255) DEFAULT NULL,
+    school VARCHAR(255) DEFAULT NULL,
+    reported INT(11) DEFAULT NULL,
+    PRIMARY KEY (uid, email)
+) ENGINE=InnoDB CHARACTER SET=utf8;
+"""
+
+SQL_DOWN = u"""
+DROP TABLE trainees;
+"""

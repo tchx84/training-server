@@ -1,0 +1,16 @@
+#-*- coding:utf-8 -*-
+SQL_UP = u"""
+CREATE TABLE confirmations (
+    trainee_uid VARCHAR(255) NOT NULL,
+    trainee_email VARCHAR(255) NOT NULL,
+    code CHAR(36) NOT NULL,
+    requested BOOLEAN NOT NULL,
+    confirmed BOOLEAN NOT NULL,
+    PRIMARY KEY (trainee_uid, trainee_email),
+    CONSTRAINT fk_confirmations_trainee FOREIGN KEY (trainee_uid, trainee_email) REFERENCES trainees (uid, email)
+) ENGINE=InnoDB CHARACTER SET=utf8;
+"""
+
+SQL_DOWN = u"""
+DROP TABLE confirmations;
+"""
