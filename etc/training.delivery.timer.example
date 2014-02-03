@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs Training Delivery Agent regularly
+
+[Timer]
+OnUnitInactiveSec=1800
+Unit=training.delivery.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,7 @@
+[Unit]
+Description=Training Delivery Agent
+
+[Service]
+Type=simple
+User=training
+ExecStart=/opt/training/deliverer.py

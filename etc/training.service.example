@@ -1,0 +1,13 @@
+[Unit]
+Description=Training Activity Server
+Requires=mysqld.service
+After=mysqld.service
+
+[Service]
+Type=simple
+User=training
+ExecStart=/opt/training/server.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
