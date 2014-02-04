@@ -1,8 +1,9 @@
 [Unit]
-Description=Runs Training Delivery Agent regularly
+Description=Training Delivery Trigger
 
 [Timer]
-OnUnitInactiveSec=1800
+OnStartupSec=60
+OnUnitInactiveSec=600
 Unit=training.delivery.service
 
 [Install]
