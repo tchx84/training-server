@@ -25,8 +25,10 @@ from .report import Report
 class DataStore(object):
 
     QUERY_TRAINEES = 'INSERT INTO trainees '\
-                     '(uid, email, name, school, reported) '\
-                     'values (%s, %s, %s, %s, UNIX_TIMESTAMP(now())) '\
+                     '(uid, email, name, school, '\
+                     'percentage, version, reported) '\
+                     'values (%s, %s, %s, %s, %s, %s, '\
+                     'UNIX_TIMESTAMP(now())) '\
                      'ON DUPLICATE KEY UPDATE '\
                      'reported = VALUES(reported)'
 
