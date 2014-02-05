@@ -1,5 +1,5 @@
 Name:           training-server
-Version:        0.1.0
+Version:        0.2.0
 Release:        1
 Summary:        Server for the Training Activity
 
@@ -91,6 +91,8 @@ db-migrate
 /opt/training/migrations/20140128094940_create_table_trainees.migration
 /opt/training/migrations/20140128103530_create_table_tasks.migration
 /opt/training/migrations/20140129114932_create_table_confirmations.migration
+/opt/training/migrations/20140205112527_add_column_percentage.migration
+/opt/training/migrations/20140205114603_add_column_version.migration
 /opt/training/migrations/simple-db-migrate.conf
 /opt/training/training/__init__.py
 /opt/training/training/datastore.py
@@ -105,5 +107,8 @@ db-migrate
 %{_sysconfdir}/systemd/system/training.delivery.timer
 
 %changelog
+* Wed Feb 05 2014 Martin Abente Lahaye <tch@sugarlabs.org>
+- Add percentage and version columns
+
 * Mon Feb 03 2014 Martin Abente Lahaye <tch@sugarlabs.org>
 - Initial release
