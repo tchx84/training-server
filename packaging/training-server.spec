@@ -31,6 +31,9 @@ cp etc/training.cfg.example $RPM_BUILD_ROOT/opt/training/etc/training.cfg.exampl
 mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}/systemd/system/
 cp etc/training.service.example $RPM_BUILD_ROOT/%{_sysconfdir}/systemd/system/training.service
 
+mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}/cron.d/
+cp etc/deliverer.cron.example $RPM_BUILD_ROOT/%{_sysconfdir}/cron.d/training-deliverer
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -39,8 +42,7 @@ exists=$(getent passwd training > /dev/null)
 if [ $? = "0" -a -z "$exists" ]; then
     echo "Using existing user"
 else
-    useradd --no-create-home \
-            --user-group \
+    useradd --user-group \
             --shell /sbin/nologin \
             --comment "training server" \
             training
@@ -80,6 +82,7 @@ db-migrate
 %defattr(-,root,root)
 %attr(0754, training, training) /opt/training/server.py
 %attr(0754, training, training) /opt/training/deliverer.py
+%attr(0754, training, training) /opt/training/misc/deliverer.sh
 %attr(0754, root, root) /opt/training/misc/generate.sh
 /opt/training/data/body.text.example
 /opt/training/data/confirmation.text.example
@@ -101,6 +104,7 @@ db-migrate
 /opt/training/training/mailman.py
 /opt/training/training/report.py
 %{_sysconfdir}/systemd/system/training.service
+%{_sysconfdir}/cron.d/training-deliverer
 
 %changelog
 * Wed Feb 05 2014 Martin Abente Lahaye <tch@sugarlabs.org>
