@@ -30,8 +30,6 @@ cp etc/training.cfg.example $RPM_BUILD_ROOT/opt/training/etc/training.cfg.exampl
 
 mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}/systemd/system/
 cp etc/training.service.example $RPM_BUILD_ROOT/%{_sysconfdir}/systemd/system/training.service
-cp etc/training.delivery.service.example $RPM_BUILD_ROOT/%{_sysconfdir}/systemd/system/training.delivery.service
-cp etc/training.delivery.timer.example $RPM_BUILD_ROOT/%{_sysconfdir}/systemd/system/training.delivery.timer
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -103,8 +101,6 @@ db-migrate
 /opt/training/training/mailman.py
 /opt/training/training/report.py
 %{_sysconfdir}/systemd/system/training.service
-%{_sysconfdir}/systemd/system/training.delivery.service
-%{_sysconfdir}/systemd/system/training.delivery.timer
 
 %changelog
 * Wed Feb 05 2014 Martin Abente Lahaye <tch@sugarlabs.org>
