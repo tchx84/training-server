@@ -30,6 +30,8 @@ class DataStore(object):
                      'values (%s, %s, %s, %s, %s, %s, '\
                      'UNIX_TIMESTAMP(now())) '\
                      'ON DUPLICATE KEY UPDATE '\
+                     'name = VALUES(name), '\
+                     'school = VALUES(school), '\
                      'percentage = VALUES(percentage), '\
                      'version = VALUES(version), '\
                      'reported = VALUES(reported)'
