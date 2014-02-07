@@ -57,7 +57,7 @@ else
     echo "Using existing configuration file"
 fi
 
-if [ ! -f /opt/training/data/body.text ] || [ ! -f /opt/training/data/confirmation.text ] || [ ! -f /opt/training/data/subject.text]; then
+if [ ! -f /opt/training/data/body.text ] || [ ! -f /opt/training/data/confirmation.text ] || [ ! -f /opt/training/data/subject.text ]; then
     cp /opt/training/data/body.text.example /opt/training/data/body.text
     cp /opt/training/data/confirmation.text.example /opt/training/data/confirmation.text
     cp /opt/training/data/subject.text.example /opt/training/data/subject.text
