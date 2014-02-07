@@ -1,6 +1,6 @@
 Name:           training-server
-Version:        0.2.0
-Release:        2
+Version:        0.2.1
+Release:        1
 Summary:        Server for the Training Activity
 
 License:        GPLv2+
@@ -107,6 +107,10 @@ db-migrate
 %{_sysconfdir}/cron.d/training-deliverer
 
 %changelog
+* Fri Feb 07 2014 Martin Abente Lahaye <tch@sugarlabs.org>
+- Update trainee columns
+- Fallback to cron jobs for deliverer
+
 * Wed Feb 05 2014 Martin Abente Lahaye <tch@sugarlabs.org>
 - Add percentage and version columns
 
