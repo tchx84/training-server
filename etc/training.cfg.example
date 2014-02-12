@@ -6,6 +6,7 @@ password: training
 database: training
 
 [server]
+address: 127.0.0.1
 port: 8888
 certfile: /opt/training/etc/training.crt
 keyfile: /opt/training/etc/training.key

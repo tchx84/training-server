@@ -38,7 +38,8 @@ def main():
     config = ConfigParser()
     config.read(config_path)
 
-    sockets = bind_sockets(config.get('server', 'port'))
+    sockets = bind_sockets(config.get('server', 'port'),
+                           config.get('server', 'address'))
     fork_processes(config.getint('server', 'instances'))
 
     datastore = DataStore(config.get('database', 'host'),
