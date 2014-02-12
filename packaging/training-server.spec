@@ -1,5 +1,5 @@
 Name:           training-server
-Version:        0.2.1
+Version:        0.2.2
 Release:        1
 Summary:        Server for the Training Activity
 
@@ -107,6 +107,9 @@ db-migrate
 %{_sysconfdir}/cron.d/training-deliverer
 
 %changelog
+* Wed Feb 12 2014 Martin Abente Lahaye <tch@sugarlabs.org>
+- Specify listening address
+
 * Fri Feb 07 2014 Martin Abente Lahaye <tch@sugarlabs.org>
 - Update trainee columns
 - Fallback to cron jobs for deliverer
