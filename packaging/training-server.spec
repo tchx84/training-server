@@ -1,5 +1,5 @@
 Name:           training-server
-Version:        0.2.2
+Version:        0.2.3
 Release:        1
 Summary:        Server for the Training Activity
 
@@ -107,6 +107,9 @@ db-migrate
 %{_sysconfdir}/cron.d/training-deliverer
 
 %changelog
+* Tue Mar 11 2014 Martin Abente Lahaye <tch@sugarlabs.org>
+- Support for HTML email content
+
 * Wed Feb 12 2014 Martin Abente Lahaye <tch@sugarlabs.org>
 - Specify listening address
 
