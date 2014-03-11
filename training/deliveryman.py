@@ -16,6 +16,8 @@
 
 import logging
 
+from string import Template
+
 from .errors import ReadError
 from .errors import SendError
 from .errors import StoreError
@@ -46,5 +48,7 @@ class DeliveryMan(object):
 
     def request(self, uid, email, code):
         ''' fill body and tell mailman to send it '''
-        body = self._mailman._body.format(uid, code)
+        template = Template(self._mailman._body)
+        body = template.safe_substitute({'training_uid': uid,
+                                         'training_code': code})
         self._mailman.send(email, body)

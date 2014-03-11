@@ -44,6 +44,7 @@ def main():
                       config.get('smtp', 'port'),
                       config.get('smtp', 'username'),
                       config.get('smtp', 'password'),
+                      config.get('smtp', 'mime'),
                       subject, body)
 
     datastore = DataStore(config.get('database', 'host'),

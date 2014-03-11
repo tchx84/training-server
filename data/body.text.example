@@ -10,11 +10,11 @@ Launch your One Academy activity, make sure that your name appears in the bottom
 If your name does not appear, insert your USB stick and change to your profile.
 When your name appears, look in the bottom left of the screen for this ID code:
 
-"{0}"
+"${training_uid}"
 
 If your ID code matches up, click the following link:
 
-https://127.0.0.1:8888/training/confirm/{1}
+https://127.0.0.1:8888/training/confirm/${training_code}
 
 Thanks for your time,
 We are very pleased to have you onboard!

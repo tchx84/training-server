@@ -24,16 +24,17 @@ from .errors import SendError
 
 class MailMan(object):
 
-    def __init__(self, host, port, user, password, subject, body):
+    def __init__(self, host, port, user, password, mime, subject, body):
         self._host = host
         self._port = port
         self._user = user
         self._password = password
+        self._mime = mime
         self._subject = subject
         self._body = body
 
     def send(self, email, body):
-        message = MIMEText(body)
+        message = MIMEText(body, self._mime)
         message['Subject'] = self._subject
 
         try:
