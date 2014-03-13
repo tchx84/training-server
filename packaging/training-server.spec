@@ -1,5 +1,5 @@
 Name:           training-server
-Version:        0.2.3
+Version:        0.3.0
 Release:        1
 Summary:        Server for the Training Activity
 
@@ -108,6 +108,9 @@ db-migrate
 %{_sysconfdir}/cron.d/training-deliverer
 
 %changelog
+* Thu Mar 13 2014 Martin Abente Lahaye <tch@sugarlabs.org>
+- Add role column
+
 * Tue Mar 11 2014 Martin Abente Lahaye <tch@sugarlabs.org>
 - Support for HTML email content
 
