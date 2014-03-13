@@ -1,0 +1,8 @@
+#-*- coding:utf-8 -*-
+SQL_UP = u"""
+ALTER TABLE trainees ADD COLUMN role VARCHAR(255) AFTER version;
+"""
+
+SQL_DOWN = u"""
+ALTER TABLE trainees DROP COLUMN role;
+"""

@@ -26,14 +26,15 @@ class DataStore(object):
 
     QUERY_TRAINEES = 'INSERT INTO trainees '\
                      '(uid, email, name, school, '\
-                     'percentage, version, reported) '\
-                     'values (%s, %s, %s, %s, %s, %s, '\
+                     'percentage, version, role, reported) '\
+                     'values (%s, %s, %s, %s, %s, %s, %s,'\
                      'UNIX_TIMESTAMP(now())) '\
                      'ON DUPLICATE KEY UPDATE '\
                      'name = VALUES(name), '\
                      'school = VALUES(school), '\
                      'percentage = VALUES(percentage), '\
                      'version = VALUES(version), '\
+                     'role = VALUES(role), '\
                      'reported = VALUES(reported)'
 
     QUERY_TASKS = 'INSERT INTO tasks '\
